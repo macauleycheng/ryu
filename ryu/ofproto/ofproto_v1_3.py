@@ -22,7 +22,7 @@ from ryu.lib import type_desc
 from ryu.ofproto import nicira_ext
 from ryu.ofproto import ofproto_utils
 from ryu.ofproto import oxm_fields
-
+from ryu.ofproto import ofproto_common
 from struct import calcsize
 
 # struct ofp_header
@@ -1229,6 +1229,7 @@ oxm_types = [
     # EXT-233 Output match Extension
     # NOTE(yamamoto): The spec says uint64_t but I assume it's an error.
     oxm_fields.ONFExperimenter('actset_output', 43, type_desc.Int4),
+    oxm_fields.BcmOfdpaExperimenter('ofdpa_ovid', ofproto_common.OFDPA_EXP_TYPE_OVID, type_desc.Int2),
 ] + nicira_ext.oxm_types
 
 oxm_fields.generate(__name__)

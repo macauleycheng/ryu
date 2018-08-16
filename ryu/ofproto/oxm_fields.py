@@ -153,6 +153,10 @@ class NiciraExtended1(_OxmClass):
 
     _class = OFPXMC_NXM_1
 
+class BcmOfdpaExperimenter(_Experimenter):
+    experimenter_id = ofproto_common.OFDPA_EXPERIMETER_ID
+
+
 
 def generate(modname):
     import sys
